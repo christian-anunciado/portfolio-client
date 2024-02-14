@@ -1,0 +1,41 @@
+---
+import { CONTACT_LINKS } from "../../shared/constants";
+import Gmail from "../../assets/icons/Gmail.astro";
+import Github from "../../assets/icons/Github.astro";
+import Linkedin from "../../assets/icons/Linkedin.astro";
+---
+
+<div class="mt-auto flex w-full flex-col items-center justify-center">
+  <span class="text-base font-semibold underline underline-offset-4">
+    Contact Me
+  </span>
+
+  <ul class="mt-4 flex w-fit gap-6">
+    <li>
+      <a
+        href={`mailto: ${CONTACT_LINKS.email}`}
+        class="text-base font-semibold underline underline-offset-4"
+      >
+        <Gmail class="h-7 w-7" />
+      </a>
+    </li>
+
+    <li>
+      <a
+        href={CONTACT_LINKS.github}
+        class="text-base font-semibold underline underline-offset-4"
+      >
+        <Github class="h-7 w-7" />
+      </a>
+    </li>
+
+    <li>
+      <a
+        href={CONTACT_LINKS.linkedin}
+        class="text-base font-semibold underline underline-offset-4"
+      >
+        <Linkedin class="h-7 w-7" />
+      </a>
+    </li>
+  </ul>
+</div>

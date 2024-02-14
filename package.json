@@ -12,8 +12,14 @@
   "dependencies": {
     "@astrojs/check": "^0.5.4",
     "@astrojs/tailwind": "^5.1.0",
+    "@fontsource/geist-sans": "^5.0.1",
     "astro": "^4.3.6",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-tailwindcss": "^0.5.11"
   }
 }
