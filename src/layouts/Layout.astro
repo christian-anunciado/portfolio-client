@@ -2,6 +2,7 @@
 import "@fontsource/geist-sans";
 import LeftNavbar from "../components/nav/LeftNavbar.astro";
 import { ViewTransitions } from "astro:transitions";
+import CurrentTimeHeader from "../components/current-time-header.tsx";
 interface Props {
   title: string;
 }
@@ -24,8 +25,9 @@ const { title } = Astro.props;
     class="flex h-[100svh] bg-gradient-to-b from-zinc-800 to-zinc-950 text-slate-200"
   >
     <LeftNavbar />
-    <main class="bg-dot-black/[0.8] h-full w-full p-14">
-      <slot />
+    <main class="bg-dot-black/[0.8] h-full w-full">
+      <CurrentTimeHeader client:load />
+      <slot class="p-14" />
     </main>
   </body>
 </html>
