@@ -24,6 +24,8 @@ const { title } = Astro.props;
     class="flex min-h-[100svh] bg-gradient-to-b from-zinc-800 to-zinc-950 text-slate-200"
   >
     <LeftNavbar />
-    <slot />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
