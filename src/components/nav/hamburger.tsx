@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+import { LineMdCoffeeLoop } from "../../assets/icons/CoffeeReact.tsx";
+import { GitHub } from "../../assets/icons/GithubReact.tsx";
+import { Gmail } from "../../assets/icons/GmailReact.tsx";
+import { LineMdLaptop } from "../../assets/icons/LaptopReact.tsx";
+import { LinkedIn } from "../../assets/icons/LinkedInReact.tsx";
+import { LineMdPerson } from "../../assets/icons/PersonReact.tsx";
+import { PointingDown } from "../../assets/icons/PointingDownReact.tsx";
 import { CONTACT_LINKS, NAV_LINKS } from "../../shared/constants";
 import { BackgroundBeams } from "../background-beams";
-import { PointingDown } from "../../assets/icons/PointingDownReact.tsx";
-import { Gmail } from "../../assets/icons/GmailReact.tsx";
-import { GitHub } from "../../assets/icons/GithubReact.tsx";
-import { LinkedIn } from "../../assets/icons/LinkedInReact.tsx";
-import { LineMdCoffeeLoop } from "../../assets/icons/CoffeeReact.tsx";
-import { LineMdLaptop } from "../../assets/icons/LaptopReact.tsx";
-import { LineMdPerson } from "../../assets/icons/PersonReact.tsx";
 
 type Props = {};
 

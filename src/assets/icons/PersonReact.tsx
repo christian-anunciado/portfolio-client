@@ -1,4 +1,3 @@
-import React from "react";
 import type { SVGProps } from "react";
 
 export function LineMdPerson(props: SVGProps<SVGSVGElement>) {
@@ -35,7 +34,12 @@ export function LineMdPerson(props: SVGProps<SVGSVGElement>) {
           d="M12 14C16 14 19 16 19 17V19H5V17C5 16 8 14 12 14z"
           opacity={0}
         >
-          <set attributeName="opacity" begin="0.5s" to={1}></set>
+          <animate
+            attributeName="opacity"
+            begin="0.5s"
+            dur="0.4s"
+            values="0;1"
+          ></animate>
           <animate
             fill="freeze"
             attributeName="stroke-dashoffset"

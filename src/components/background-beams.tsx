@@ -1,8 +1,8 @@
-"use client";
-import React from "react";
 import { motion } from "framer-motion";
+
 import { cn } from "../shared/cn";
 
+("use client");
 export function BackgroundBeamsDemo() {
   return (
     <div className="relative flex h-screen flex-col items-center justify-center bg-neutral-950 antialiased">
@@ -114,7 +114,7 @@ export const BackgroundBeams = ({ className }: { className?: string }) => {
           ></motion.path>
         ))}
         <defs>
-          {paths.map((path, index) => (
+          {paths.map((_, index) => (
             <motion.linearGradient
               id={`linearGradient-${index}`}
               x1="100%"
