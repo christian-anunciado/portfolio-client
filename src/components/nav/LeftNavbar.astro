@@ -4,7 +4,9 @@ import NavLinks from "../nav/NavLinks.astro";
 import BottomNav from "./BottomNav.astro";
 ---
 
-<nav class="sticky left-0 top-0 flex max-w-md flex-col bg-zinc-950 px-24 py-14">
+<nav
+  class="sticky left-0 top-0 hidden max-w-md flex-col bg-zinc-950 px-24 py-14 md:flex"
+>
   <div class="flex flex-col items-center">
     <Avatar />
     <h1 class="text-2xl font-bold tracking-wide">Christian.dev</h1>
