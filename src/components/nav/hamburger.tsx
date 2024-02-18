@@ -105,7 +105,7 @@ function Hamburger({}: Props) {
           variants={listVariants}
           initial="closed"
           animate="opened"
-          className="fixed left-0 top-0 z-40 flex h-screen w-screen flex-col items-center justify-center bg-gradient-to-b from-zinc-800 to-zinc-950 pb-10 text-4xl text-white"
+          className="fixed left-0 top-0 z-40 flex h-[100svh] w-screen flex-col items-center justify-center bg-gradient-to-b from-zinc-800 to-zinc-950 pb-10 text-4xl text-white"
         >
           <div className="z-50 flex flex-1 flex-col items-center justify-center gap-10">
             {NAV_LINKS.map((link, index) => (
