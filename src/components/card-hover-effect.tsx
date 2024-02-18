@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+
 import { cn } from "../shared/cn";
 
 export type HoverCardItem = {
@@ -75,7 +76,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "relative z-20 h-full w-full overflow-hidden rounded-2xl border border-transparent bg-black p-4 group-hover:border-slate-700 dark:border-white/[0.2]",
+        "relative z-20 h-full w-full overflow-hidden rounded-2xl border border-transparent bg-zinc-950 p-4 group-hover:border-slate-700 dark:border-white/[0.2]",
         className,
       )}
     >

@@ -76,7 +76,7 @@ function Hamburger({}: Props) {
     },
   };
   return (
-    <div className="md:hidden">
+    <div className="block md:hidden">
       {/* MENU BUTTON */}
       <button
         className="relative z-50 flex h-6 w-7 flex-col justify-between"
@@ -118,9 +118,10 @@ function Hamburger({}: Props) {
                   href={link.href}
                   className="flex flex-col items-center justify-center gap-3"
                 >
-                  {/* {index === 0 && <LineMdCoffeeLoop className="h-7 w-7" />} */}
                   {index === 0 && <LineMdCoffeeLoop className="h-7 w-7" />}
+
                   {index === 1 && <LineMdPerson className="h-7 w-7" />}
+
                   {index === 2 && <LineMdLaptop className="h-7 w-7" />}
                   {link.label}
                 </a>

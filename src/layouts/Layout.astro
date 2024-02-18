@@ -1,9 +1,9 @@
 ---
 import "@fontsource/geist-sans";
-import LeftNavbar from "../components/nav/LeftNavbar.astro";
-import MobileNav from "../components/nav/MobileNav.astro";
 import { ViewTransitions } from "astro:transitions";
 import CurrentTimeHeader from "../components/current-time-header.tsx";
+import LeftNavbar from "../components/nav/LeftNavbar.astro";
+import MobileNav from "../components/nav/MobileNav.astro";
 
 interface Props {
   title: string;
@@ -24,12 +24,10 @@ const { title } = Astro.props;
     <ViewTransitions />
   </head>
   <body
-    class="flex h-screen flex-col bg-gradient-to-b from-zinc-800 to-zinc-950 text-slate-200 md:flex-row"
+    class="flex h-[100svh] flex-col bg-gradient-to-b from-zinc-800 to-zinc-900 text-slate-200 md:flex-row"
   >
     <LeftNavbar />
-    <main
-      class="bg-dot-black/[0.8] relative h-[calc(100%-30px)] w-full overflow-y-auto"
-    >
+    <main class="relative h-full w-full overflow-y-auto bg-dot-black/[0.8]">
       <CurrentTimeHeader client:load />
       <MobileNav />
 

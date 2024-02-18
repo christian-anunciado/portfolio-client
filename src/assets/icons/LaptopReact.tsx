@@ -1,4 +1,3 @@
-import React from "react";
 import type { SVGProps } from "react";
 
 export function LineMdLaptop(props: SVGProps<SVGSVGElement>) {
@@ -21,6 +20,7 @@ export function LineMdLaptop(props: SVGProps<SVGSVGElement>) {
           <animate
             fill="freeze"
             attributeName="stroke-dashoffset"
+            begin={"0.8s"}
             dur="0.6s"
             values="50;0"
           ></animate>
@@ -29,7 +29,7 @@ export function LineMdLaptop(props: SVGProps<SVGSVGElement>) {
           <animate
             fill="freeze"
             attributeName="stroke-dashoffset"
-            begin="0.7s"
+            begin="1.2s"
             dur="0.3s"
             values="20;0"
           ></animate>

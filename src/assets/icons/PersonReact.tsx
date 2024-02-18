@@ -32,18 +32,12 @@ export function LineMdPerson(props: SVGProps<SVGSVGElement>) {
           strokeDasharray={36}
           strokeDashoffset={36}
           d="M12 14C16 14 19 16 19 17V19H5V17C5 16 8 14 12 14z"
-          opacity={0}
+          opacity={1}
         >
-          <animate
-            attributeName="opacity"
-            begin="0.5s"
-            dur="0.4s"
-            values="0;1"
-          ></animate>
           <animate
             fill="freeze"
             attributeName="stroke-dashoffset"
-            begin="0.5s"
+            begin="0.7s"
             dur="0.4s"
             values="36;0"
           ></animate>
