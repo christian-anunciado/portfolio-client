@@ -1,4 +1,4 @@
-import getCurrentTime from "../hooks/getCurrentTime";
+import getCurrentTime from "../../hooks/getCurrentTime";
 
 function CurrentTimeHeader() {
   const { phTime } = getCurrentTime();

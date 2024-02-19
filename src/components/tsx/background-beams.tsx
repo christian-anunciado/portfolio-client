@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { cn } from "../shared/cn";
+import { cn } from "../../shared/cn";
 
 ("use client");
 export function BackgroundBeamsDemo() {

@@ -1,7 +1,7 @@
 import {
+  HoverCardItem,
   HoverEffect,
-  type HoverCardItem,
-} from "../../components/card-hover-effect";
+} from "../../components/tsx/card-hover-effect";
 
 export function CardHoverEffectDemo() {
   return (

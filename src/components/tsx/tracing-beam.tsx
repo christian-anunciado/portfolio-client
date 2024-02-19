@@ -7,7 +7,7 @@ import {
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
-import { cn } from "../shared/cn";
+import { cn } from "../../shared/cn";
 
 ("use client");
 export const TracingBeam = ({
