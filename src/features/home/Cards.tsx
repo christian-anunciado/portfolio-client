@@ -1,16 +1,16 @@
 import {
-  HoverCardItem,
   HoverEffect,
+  type HoverCardItem,
 } from "../../components/tsx/card-hover-effect";
 
 export function CardHoverEffectDemo() {
   return (
     <div className="mt-5">
-      <HoverEffect items={projects} />
+      <HoverEffect items={projects as HoverCardItem[]} />
     </div>
   );
 }
-export const projects: HoverCardItem[] = [
+export const projects = [
   {
     title: "5+",
     description: "Completed Projects",
