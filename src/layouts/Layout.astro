@@ -4,12 +4,6 @@ import { ViewTransitions } from "astro:transitions";
 import LeftNavbar from "../components/nav/LeftNavbar.astro";
 import MobileNav from "../components/nav/MobileNav.astro";
 import CurrentTimeHeader from "../components/tsx/current-time-header";
-
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -24,7 +18,7 @@ const { title } = Astro.props;
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>Christian Anunciado | Web Developer</title>
     <ViewTransitions />
   </head>
   <body

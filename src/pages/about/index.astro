@@ -1,7 +1,25 @@
 ---
+import { Image } from "astro:assets";
+import programmer from "../../assets/images/programmer.png";
+import HeaderText from "../../components/HeaderText.astro";
+import MainContainer from "../../components/MainContainer.astro";
+import TitleText from "../../components/TitleText.astro";
+import Description from "../../features/about/Description.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Christian Anunciado">
-  <h1>About</h1>
+<Layout>
+  <MainContainer>
+    <div class="flex w-fit flex-col gap-5 pb-10 md:pb-0">
+      <TitleText> About Me </TitleText>
+      <HeaderText className="flex items-center gap-5">
+        I'm Christian Anunciado <Image
+          src={programmer}
+          alt="Programmer"
+          class="inline-flex"
+        />
+      </HeaderText>
+      <Description />
+    </div>
+  </MainContainer>
 </Layout>

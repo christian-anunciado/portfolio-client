@@ -1,0 +1,12 @@
+---
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+import { cn } from "../shared/cn";
+---
+
+<h1 class={cn("text-4xl font-bold tracking-wide md:text-5xl", className)}>
+  <slot />
+</h1>

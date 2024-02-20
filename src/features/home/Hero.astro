@@ -1,22 +1,21 @@
 ---
 import WavingHand from "../../assets/icons/WavingHand.astro";
+import HeaderText from "../../components/HeaderText.astro";
+import MainContainer from "../../components/MainContainer.astro";
+import TitleText from "../../components/TitleText.astro";
 import { CardHoverEffectDemo } from "./Cards.tsx";
 ---
 
-<div
-  class="flex h-[calc(100%-30px)] w-full items-start justify-center p-14 md:items-center"
->
+<MainContainer>
   <div class="flex flex-col gap-5 pb-10 md:pb-0">
-    <span class="text-lg font-medium tracking-widest text-sky-500">
-      Hi there,
-    </span>
-    <h1 class="text-4xl font-bold tracking-wide md:text-5xl">
+    <TitleText> Hi there, </TitleText>
+    <HeaderText>
       I'm a Front-End Web Developer <WavingHand class="ml-1 inline-flex" />
-    </h1>
-    <p class="max-w-[90%] text-sm tracking-wide text-white/85 md:text-base">
+    </HeaderText>
+    <p class="max-w-[90%] text-sm tracking-wide text-gray-400 md:text-base">
       I build well-crafted websites. With years of experience, I can help you
       make your ideas come to life.
     </p>
     <CardHoverEffectDemo client:load />
   </div>
-</div>
+</MainContainer>
