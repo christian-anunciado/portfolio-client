@@ -24,7 +24,7 @@ import CurrentTimeHeader from "../components/tsx/current-time-header";
   <body
     class="flex h-screen flex-col bg-gradient-to-b from-zinc-800 to-zinc-900 text-slate-200 md:flex-row"
   >
-    <LeftNavbar />
+    <LeftNavbar transition:animate="slide" />
     <main class="relative h-[100svh] w-full overflow-y-auto bg-dot-black/[0.8]">
       <CurrentTimeHeader client:load />
       <MobileNav />
