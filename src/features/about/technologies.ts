@@ -16,15 +16,16 @@ export const technologies: Technology[] = [
     alt: "Java",
   },
   {
-    href: "https://www.typescriptlang.org/",
-    src: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/typescript-colored.svg",
-    alt: "TypeScript",
-  },
-  {
     href: "https://www.python.org/",
     src: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg",
     alt: "Python",
   },
+  {
+    href: "https://www.typescriptlang.org/",
+    src: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/typescript-colored.svg",
+    alt: "TypeScript",
+  },
+
   {
     href: "https://developer.mozilla.org/en-US/docs/Glossary/HTML5",
     src: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg",
@@ -41,15 +42,16 @@ export const technologies: Technology[] = [
     alt: "React",
   },
   {
-    href: "https://astro.build/",
-    src: "https://cdn.simpleicons.org/astro",
-    alt: "Astro",
-  },
-  {
     href: "https://nextjs.org/",
     src: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nextjs-colored-dark.svg",
     alt: "NextJs",
   },
+  {
+    href: "https://astro.build/",
+    src: "https://cdn.simpleicons.org/astro",
+    alt: "Astro",
+  },
+
   {
     href: "https://tailwindcss.com/",
     src: "https://cdn.simpleicons.org/tailwindcss",
