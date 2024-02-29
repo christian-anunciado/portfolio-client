@@ -44,7 +44,8 @@ export const BentoGridItem = ({
       )}
     >
       <DirectionAwareHover imageUrl={thumbnail}>
-        <p className="text-xl font-bold">{title}</p>
+        <p className="text-lg font-bold">{title}</p>
+        <p className="!text-xs font-medium">Click to Learn More</p>
       </DirectionAwareHover>
       <div className="transition duration-200 group-hover/bento:translate-x-2">
         {icon}
