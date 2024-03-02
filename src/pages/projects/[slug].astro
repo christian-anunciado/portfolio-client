@@ -26,12 +26,12 @@ const project = projects.find(
 <Layout>
   <MainContainer className="md:items-start">
     <div class="flex flex-col gap-10">
-      <BackArrow client:idle />
+      <BackArrow client:load />
       <DirectionAwareHover
         imageUrl={project!.projectImg}
         className="h-auto md:h-96"
         imageClassName="object-center object-fit w-full h-full scale-100"
-        transitionName={`${project!.title}-img`}
+        transitionName={`${project!.title.split(" ")[0]}-img`}
         client:load
       >
         <p class="text-lg font-bold">{project!.title}</p>

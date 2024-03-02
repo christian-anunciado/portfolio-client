@@ -12,13 +12,13 @@ const { subTitle, title } = Astro.props;
 
 <TitleText
   className="text-base font-medium uppercase tracking-wide"
-  transitionName={`${title}-descText`}
+  transitionName={`${title.split(" ")[0]}-descText`}
 >
   {subTitle}
 </TitleText>
 <HeaderText
   className="mb-2 text-2xl font-bold md:text-3xl"
-  transitionName={`${title}-titleText`}
+  transitionName={`${title.split(" ")[0]}-titleText`}
 >
   {title}
 </HeaderText>

@@ -1,29 +1,10 @@
 ---
-import BentoGrid from "../../components/BentoGrid.astro";
-import BentoGridItem from "../../components/BentoGridItem.astro";
+import ProjectBento from "../../features/projects/ProjectBento.astro";
 import ProjectHero from "../../features/projects/ProjectHero.astro";
-import { projects } from "../../features/projects/projects";
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout>
   <ProjectHero />
-  <BentoGrid className="mx-auto max-w-5xl pb-10">
-    <span
-      class="mb-5 self-start text-3xl font-bold tracking-wide text-sky-500 md:col-span-3 md:text-4xl"
-    >
-      Projects
-    </span>
-    {
-      projects.map((item, i) => (
-        <BentoGridItem
-          title={item.title}
-          description={item.subTitle}
-          projectImg={item.projectImg}
-          className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-          href={item.href}
-        />
-      ))
-    }
-  </BentoGrid>
+  <ProjectBento />
 </Layout>
