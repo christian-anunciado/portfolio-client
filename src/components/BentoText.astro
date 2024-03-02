@@ -1,4 +1,6 @@
 ---
+import HeaderText from "./HeaderText.astro";
+
 interface Props {
   description: string;
   title: string;
@@ -7,15 +9,15 @@ interface Props {
 const { description, title } = Astro.props;
 ---
 
-<h3
-  class="mb-2 mt-2 font-sans font-bold text-neutral-600 dark:text-neutral-200"
-  transition:name={`${title}-project-title`}
+<HeaderText
+  className="mb-3 text-base text-neutral-200 md:text-base"
+  transitionName={`${title}-titleText`}
 >
   {title}
-</h3>
+</HeaderText>
 <div
   class="font-sans text-xs font-normal text-neutral-600 dark:text-neutral-300"
-  transition:name={`${description}-project-desc`}
+  transition:name={`${title}-descText`}
 >
   {description}
 </div>

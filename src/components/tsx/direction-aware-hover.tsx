@@ -74,9 +74,6 @@ export const DirectionAwareHover = ({
           initial="initial"
           whileHover={direction}
           exit="exit"
-          style={{
-            viewTransitionName: `${transitionName}`,
-          }}
         >
           <motion.div className="absolute inset-0 z-10 hidden h-full w-full bg-black/40 transition duration-500 group-hover/card:block" />
           <motion.div
@@ -90,10 +87,13 @@ export const DirectionAwareHover = ({
             <img
               alt="image"
               className={cn(
-                "h-full w-full scale-[1.15] object-scale-down object-center",
+                "h-full w-full object-scale-down object-center",
                 imageClassName,
               )}
               src={imageUrl}
+              style={{
+                viewTransitionName: transitionName,
+              }}
             />
           </motion.div>
           <motion.div

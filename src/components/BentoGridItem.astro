@@ -19,7 +19,11 @@ const { className, title, description, projectImg, icon, href } = Astro.props;
   )}
   href={href}
 >
-  <DirectionAwareHover imageUrl={projectImg} client:load>
+  <DirectionAwareHover
+    imageUrl={projectImg}
+    transitionName={`${title}-img`}
+    client:visible
+  >
     <p class="text-lg font-bold">{title}</p>
     <p class="!text-xs font-medium">Click to Learn More</p>
   </DirectionAwareHover>

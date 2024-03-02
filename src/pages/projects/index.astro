@@ -18,7 +18,7 @@ import Layout from "../../layouts/Layout.astro";
       projects.map((item, i) => (
         <BentoGridItem
           title={item.title}
-          description={item.description}
+          description={item.subTitle}
           projectImg={item.projectImg}
           className={i === 3 || i === 6 ? "md:col-span-2" : ""}
           href={item.href}

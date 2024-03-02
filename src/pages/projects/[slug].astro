@@ -1,6 +1,7 @@
 ---
 import type { GetStaticPaths } from "astro";
 import MainContainer from "../../components/MainContainer.astro";
+import BackArrow from "../../components/tsx/back-arrow";
 import { DirectionAwareHover } from "../../components/tsx/direction-aware-hover";
 import ProjectHeader from "../../features/projects/project/ProjectHeader.astro";
 import ProjectIcons from "../../features/projects/project/ProjectIcons.astro";
@@ -25,11 +26,12 @@ const project = projects.find(
 <Layout>
   <MainContainer className="md:items-start">
     <div class="flex flex-col gap-10">
+      <BackArrow client:idle />
       <DirectionAwareHover
         imageUrl={project!.projectImg}
-        className="h-96"
+        className="h-auto md:h-96"
         imageClassName="object-center object-fit w-full h-full scale-100"
-        transitionName={`${slug}-img`}
+        transitionName={`${project!.title}-img`}
         client:load
       >
         <p class="text-lg font-bold">{project!.title}</p>
@@ -38,7 +40,7 @@ const project = projects.find(
       <div class="flex max-w-3xl flex-1 flex-col gap-2">
         <ProjectHeader title={project!.title} subTitle={project!.subTitle} />
         <ProjectIcons icons={project!.icons} />
-        <p class="mb-4 w-[90%] text-gray-300">
+        <p class="mb-4 w-[90%] text-sm text-gray-300 md:text-base">
           {project!.description}
         </p>
         <ProjectLinks
