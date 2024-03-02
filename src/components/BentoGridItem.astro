@@ -1,0 +1,30 @@
+---
+import { DirectionAwareHover } from "../components/tsx/direction-aware-hover";
+import type { Project } from "../features/projects/projects";
+import { cn } from "../shared/cn";
+import BentoText from "./BentoText.astro";
+
+type Props = Pick<Project, "title" | "description" | "projectImg" | "href"> & {
+  icon?: string;
+  className?: string;
+};
+
+const { className, title, description, projectImg, icon, href } = Astro.props;
+---
+
+<a
+  class={cn(
+    "group/bento shadow-input row-span-1 flex cursor-pointer flex-col justify-start space-y-4 rounded-xl border border-transparent bg-white p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-zinc-950 dark:shadow-none",
+    className,
+  )}
+  href={href}
+>
+  <DirectionAwareHover imageUrl={projectImg} client:load>
+    <p class="text-lg font-bold">{title}</p>
+    <p class="!text-xs font-medium">Click to Learn More</p>
+  </DirectionAwareHover>
+  <div class="transition duration-200 group-hover/bento:translate-x-2">
+    {icon}
+    <BentoText title={title} description={description} />
+  </div>
+</a>

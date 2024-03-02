@@ -1,0 +1,14 @@
+---
+import { cn } from "../shared/cn";
+
+const { className } = Astro.props;
+---
+
+<div
+  class={cn(
+    "mx-auto grid max-w-7xl grid-cols-1 gap-4 p-10 md:grid-cols-3",
+    className,
+  )}
+>
+  <slot />
+</div>
