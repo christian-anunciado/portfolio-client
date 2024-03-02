@@ -11,7 +11,7 @@ const { subTitle, title } = Astro.props;
 ---
 
 <TitleText
-  className="text-base font-medium uppercase tracking-wide"
+  className="text-sm font-medium uppercase tracking-wide md:text-base"
   transitionName={`${title.split(" ")[0]}-descText`}
 >
   {subTitle}

@@ -18,6 +18,7 @@ const { className, title, description, projectImg, icon, href } = Astro.props;
     className,
   )}
   href={href}
+  id={title.split(" ")[0]}
 >
   <DirectionAwareHover
     imageUrl={projectImg}
