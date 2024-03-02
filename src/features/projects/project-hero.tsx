@@ -1,6 +1,6 @@
 import { HeroParallax } from "../../components/tsx/hero-parallax";
-import { products } from "./projects";
+import { projects } from "./projects";
 
 export function ProjectHero() {
-  return <HeroParallax products={products} />;
+  return <HeroParallax products={projects} />;
 }

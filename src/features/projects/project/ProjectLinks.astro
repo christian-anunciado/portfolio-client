@@ -1,0 +1,40 @@
+---
+import ExternalLink from "../../../assets/icons/ExternalLink.astro";
+import Github from "../../../assets/icons/Github.astro";
+
+interface Props {
+  liveLink?: string;
+  sourceLink?: string;
+}
+
+const { liveLink, sourceLink } = Astro.props;
+---
+
+<div class="mb-10 flex items-center gap-6">
+  {
+    !!liveLink && (
+      <a href={liveLink}>
+        <button
+          role="link"
+          class="flex items-center gap-2 rounded-md bg-zinc-800 px-4 py-2 text-base tracking-wide text-gray-400 transition-all hover:-translate-y-1 hover:bg-zinc-700 hover:text-white"
+        >
+          <ExternalLink class="h-5 w-5" />
+          Live
+        </button>
+      </a>
+    )
+  }
+  {
+    !!sourceLink && (
+      <a href="">
+        <button
+          role="link"
+          class="flex items-center gap-2 rounded-md bg-zinc-800 px-4 py-2 text-base tracking-wide text-gray-400 transition-all hover:-translate-y-1 hover:bg-zinc-700 hover:text-white"
+        >
+          <Github class="h-5 w-5" />
+          Source
+        </button>
+      </a>
+    )
+  }
+</div>

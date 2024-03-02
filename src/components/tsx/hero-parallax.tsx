@@ -6,12 +6,9 @@ import {
   useTransform,
 } from "framer-motion";
 import React from "react";
+import { type Project } from "../../features/projects/projects";
 
-export interface Product {
-  title: string;
-  link: string;
-  thumbnail: string;
-}
+export type Product = Pick<Project, "title" | "href" | "projectImg">;
 
 export const HeroParallax = ({ products }: { products: Product[] }) => {
   const firstRow = products.slice(0, 5);
@@ -115,11 +112,7 @@ export const ProductCard = ({
   product,
   translate,
 }: {
-  product: {
-    title: string;
-    link: string;
-    thumbnail: string;
-  };
+  product: Product;
   translate: MotionValue<number>;
 }) => {
   return (
@@ -133,9 +126,9 @@ export const ProductCard = ({
       key={product.title}
       className="group/product relative h-96 w-[30rem] flex-shrink-0"
     >
-      <a href={product.link} className="block group-hover/product:shadow-2xl ">
+      <a href={product.href} className="block group-hover/product:shadow-2xl ">
         <img
-          src={product.thumbnail}
+          src={product.projectImg}
           height="600"
           width="600"
           className="absolute inset-0 h-full w-full object-cover object-left-top"

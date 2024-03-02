@@ -1,0 +1,51 @@
+---
+import type { GetStaticPaths } from "astro";
+import MainContainer from "../../components/MainContainer.astro";
+import { DirectionAwareHover } from "../../components/tsx/direction-aware-hover";
+import ProjectHeader from "../../features/projects/project/ProjectHeader.astro";
+import ProjectIcons from "../../features/projects/project/ProjectIcons.astro";
+import ProjectLinks from "../../features/projects/project/ProjectLinks.astro";
+import { projects } from "../../features/projects/projects";
+import Layout from "../../layouts/Layout.astro";
+
+export const getStaticPaths = (() => {
+  const paths = projects.map((project) => ({
+    params: { slug: project.href.replace("/projects/", "") },
+  }));
+  return paths;
+}) satisfies GetStaticPaths;
+
+const { slug } = Astro.params;
+
+const project = projects.find(
+  (project) => project.href === `/projects/${slug}`,
+);
+---
+
+<Layout>
+  <MainContainer className="md:items-start">
+    <div class="flex flex-col gap-10">
+      <DirectionAwareHover
+        imageUrl={project!.projectImg}
+        className="h-96"
+        imageClassName="object-center object-cover w-full h-full scale-100"
+        transitionName={`${slug}-img`}
+        client:load
+      >
+        <p class="text-lg font-bold">{project!.title}</p>
+        <p class="!text-xs font-medium">{project!.subTitle}</p>
+      </DirectionAwareHover>
+      <div class="flex max-w-3xl flex-1 flex-col gap-2">
+        <ProjectHeader title={project!.title} subTitle={project!.subTitle} />
+        <ProjectIcons icons={project!.icons} />
+        <p class="mb-4 w-[90%] text-gray-300">
+          {project!.description}
+        </p>
+        <ProjectLinks
+          liveLink={project?.liveLink}
+          sourceLink={project?.sourceLink}
+        />
+      </div>
+    </div>
+  </MainContainer>
+</Layout>

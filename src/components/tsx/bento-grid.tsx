@@ -1,14 +1,11 @@
+import type { Project } from "../../features/projects/projects";
 import { cn } from "../../shared/cn";
 import { DirectionAwareHover } from "./direction-aware-hover";
 
-export type BentoProps = {
-  className?: string;
-  title?: string | React.ReactNode;
-  description?: string | React.ReactNode;
-  thumbnail?: string;
-  icon?: React.ReactNode;
-  href?: string;
-};
+export type BentoProps = Pick<
+  Project,
+  "title" | "description" | "projectImg" | "href"
+> & { icon?: string; className?: string };
 
 export const BentoGrid = ({
   className,
@@ -33,17 +30,19 @@ export const BentoGridItem = ({
   className,
   title,
   description,
-  thumbnail,
+  projectImg,
   icon,
+  href,
 }: BentoProps) => {
   return (
-    <div
+    <a
       className={cn(
-        "group/bento shadow-input row-span-1 flex flex-col justify-start space-y-4 rounded-xl border border-transparent bg-white p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-zinc-950 dark:shadow-none",
+        "group/bento shadow-input row-span-1 flex cursor-pointer flex-col justify-start space-y-4 rounded-xl border border-transparent bg-white p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-zinc-950 dark:shadow-none",
         className,
       )}
+      href={href}
     >
-      <DirectionAwareHover imageUrl={thumbnail}>
+      <DirectionAwareHover imageUrl={projectImg} transitionName="greatvet-img">
         <p className="text-lg font-bold">{title}</p>
         <p className="!text-xs font-medium">Click to Learn More</p>
       </DirectionAwareHover>
@@ -56,6 +55,6 @@ export const BentoGridItem = ({
           {description}
         </div>
       </div>
-    </div>
+    </a>
   );
 };

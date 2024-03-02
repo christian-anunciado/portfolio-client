@@ -1,0 +1,19 @@
+---
+import HeaderText from "../../../components/HeaderText.astro";
+import TitleText from "../../../components/TitleText.astro";
+
+interface Props {
+  subTitle: string;
+  title: string;
+}
+
+const { subTitle, title } = Astro.props;
+---
+
+<TitleText className="text-base font-medium uppercase tracking-wide">
+  {subTitle}
+</TitleText>
+<HeaderText className="mb-2 text-2xl font-bold md:text-3xl">
+  {title}
+</HeaderText>
+<div class="mb-2 h-1.5 w-1/5 bg-sky-700"></div>

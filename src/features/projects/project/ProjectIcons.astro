@@ -1,0 +1,13 @@
+---
+import type { Icon } from "../projects";
+
+interface Props {
+  icons: Icon[];
+}
+
+const { icons } = Astro.props;
+---
+
+<div class="mb-4 flex items-center gap-4">
+  {icons.map((icon) => <img src={icon.src} alt={icon.alt} class="h-6 w-6" />)}
+</div>
