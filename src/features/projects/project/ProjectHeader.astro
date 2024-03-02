@@ -13,7 +13,10 @@ const { subTitle, title } = Astro.props;
 <TitleText className="text-base font-medium uppercase tracking-wide">
   {subTitle}
 </TitleText>
-<HeaderText className="mb-2 text-2xl font-bold md:text-3xl">
+<h3
+  class="mb-2 text-2xl font-bold md:text-3xl"
+  transition:name={`${title}-project-title`}
+>
   {title}
-</HeaderText>
+</h3>
 <div class="mb-2 h-1.5 w-1/5 bg-sky-700"></div>

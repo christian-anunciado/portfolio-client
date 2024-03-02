@@ -33,7 +33,10 @@ export const BentoGridItem = ({
   projectImg,
   icon,
   href,
-}: BentoProps) => {
+  children,
+}: BentoProps & {
+  children: React.ReactNode;
+}) => {
   return (
     <a
       className={cn(
@@ -42,18 +45,13 @@ export const BentoGridItem = ({
       )}
       href={href}
     >
-      <DirectionAwareHover imageUrl={projectImg} transitionName="greatvet-img">
+      <DirectionAwareHover imageUrl={projectImg}>
         <p className="text-lg font-bold">{title}</p>
         <p className="!text-xs font-medium">Click to Learn More</p>
       </DirectionAwareHover>
       <div className="transition duration-200 group-hover/bento:translate-x-2">
         {icon}
-        <div className="mb-2 mt-2 font-sans font-bold text-neutral-600 dark:text-neutral-200">
-          {title}
-        </div>
-        <div className="font-sans text-xs font-normal text-neutral-600 dark:text-neutral-300">
-          {description}
-        </div>
+        {children}
       </div>
     </a>
   );

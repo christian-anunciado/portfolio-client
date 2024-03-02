@@ -4,6 +4,7 @@ import Technology from "./Technology.tsx";
 
 <div
   class="mt-2 flex max-w-3xl flex-col gap-5 text-sm leading-7 tracking-wide text-gray-400 md:text-base"
+  transition:name="descriptionText"
 >
   <p>
     With
@@ -21,5 +22,5 @@ import Technology from "./Technology.tsx";
     I take pride on crafting clean, efficient, and maintainable code, thriving
     on challenging projects that push me to grow.
   </p>
-  <Technology client:load />
+  <Technology transition:name="objectTest" client:load />
 </div>

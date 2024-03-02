@@ -6,9 +6,13 @@ import {
   useTransform,
 } from "framer-motion";
 import { useState } from "react";
+import { cn } from "../../shared/cn";
 
 export const AnimatedTooltip = ({
   items,
+  imgClassName,
+  imgWidth,
+  imgHeight,
 }: {
   items: {
     id: number;
@@ -16,6 +20,9 @@ export const AnimatedTooltip = ({
     name: string;
     src: string;
   };
+  imgClassName?: string;
+  imgWidth?: string;
+  imgHeight?: string;
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const springConfig = { stiffness: 100, damping: 5 };
@@ -74,11 +81,14 @@ export const AnimatedTooltip = ({
         <a href={items.href} target="_blank" rel="noreferrer">
           <img
             onMouseMove={handleMouseMove}
-            height={36}
-            width={36}
+            height={imgHeight ?? 36}
+            width={imgWidth ?? 36}
             src={items.src}
             alt={items.name}
-            className="relative !m-0 h-[2.25rem] w-[2.25rem] object-cover object-center !p-0 transition  duration-500 group-hover:z-30 group-hover:scale-105"
+            className={cn(
+              "relative !m-0 h-[2.25rem] w-[2.25rem] object-cover object-center !p-0 transition  duration-500 group-hover:z-30 group-hover:scale-105",
+              imgClassName,
+            )}
           />
         </a>
       </div>

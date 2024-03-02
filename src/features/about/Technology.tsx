@@ -10,6 +10,7 @@ function Technology({}: Props) {
       <div className="mt-6 grid grid-cols-4 place-items-center gap-8 md:grid-cols-8">
         {technologies.map((tech, idx) => (
           <AnimatedTooltip
+            key={idx}
             items={{
               href: tech.href,
               src: tech.src,

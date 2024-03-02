@@ -1,10 +1,10 @@
 ---
-import { ProjectBento } from "../../features/projects/project-bento";
-import { ProjectHero } from "../../features/projects/project-hero";
+import ProjectBento from "../../features/projects/ProjectBento.astro";
+import ProjectHero from "../../features/projects/ProjectHero.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout>
   <ProjectHero />
-  <ProjectBento client:load />
+  <ProjectBento />
 </Layout>

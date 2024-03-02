@@ -7,6 +7,9 @@ const { className } = Astro.props;
 import { cn } from "../shared/cn";
 ---
 
-<span class={cn("text-lg font-medium tracking-widest text-sky-500", className)}>
+<span
+  class={cn("text-lg font-medium tracking-widest text-sky-500", className)}
+  transition:name="titleText"
+>
   <slot />
 </span>

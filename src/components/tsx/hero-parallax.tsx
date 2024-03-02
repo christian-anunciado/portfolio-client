@@ -10,7 +10,13 @@ import { type Project } from "../../features/projects/projects";
 
 export type Product = Pick<Project, "title" | "href" | "projectImg">;
 
-export const HeroParallax = ({ products }: { products: Product[] }) => {
+export const HeroParallax = ({
+  products,
+  children,
+}: {
+  products: Product[];
+  children: React.ReactNode;
+}) => {
   const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
   const thirdRow = products.slice(10, 15);
@@ -51,7 +57,7 @@ export const HeroParallax = ({ products }: { products: Product[] }) => {
       ref={ref}
       className="relative flex h-auto  flex-col self-auto overflow-hidden pt-40 antialiased [perspective:750px] [transform-style:preserve-3d]"
     >
-      <Header />
+      {children}
       <motion.div
         style={{
           rotateX,
@@ -89,21 +95,6 @@ export const HeroParallax = ({ products }: { products: Product[] }) => {
           ))}
         </motion.div>
       </motion.div>
-    </div>
-  );
-};
-
-export const Header = () => {
-  return (
-    <div className="relative left-0 top-0 mx-auto w-full max-w-7xl  p-20 md:p-40">
-      <h1 className="text-4xl font-bold tracking-wide md:text-5xl">
-        Featured <br /> works <span className="text-sky-500">/ projects</span>
-      </h1>
-      <p className="mt-8 max-w-2xl text-sm leading-9 tracking-wide text-white md:text-base">
-        These are the amazing products that I have worked on the past few years.
-        <br /> Check them out below to see what I'm up to, and get in touch if
-        you want to collaborate!
-      </p>
     </div>
   );
 };

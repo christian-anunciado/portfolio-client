@@ -1,0 +1,27 @@
+---
+import BentoText from "../../components/BentoText.astro";
+import { BentoGrid, BentoGridItem } from "../../components/tsx/bento-grid";
+import { projects } from "./projects";
+---
+
+<BentoGrid className="mx-auto max-w-5xl pb-10">
+  <span
+    class="mb-5 self-start text-3xl font-bold tracking-wide text-sky-500 md:col-span-3 md:text-4xl"
+  >
+    Projects
+  </span>
+  {
+    projects.map((item, i) => (
+      <BentoGridItem
+        title={item.title}
+        description={item.description}
+        projectImg={item.projectImg}
+        className={i === 3 || i === 6 ? "md:col-span-2" : ""}
+        href={item.href}
+        client:load
+      >
+        <BentoText title={item.title} description={item.description} />
+      </BentoGridItem>
+    ))
+  }
+</BentoGrid>
