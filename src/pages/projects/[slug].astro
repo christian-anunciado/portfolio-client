@@ -45,7 +45,9 @@ const project = projects.find(
       <div class="flex max-w-3xl flex-1 flex-col gap-2">
         <ProjectHeader title={project!.title} subTitle={project!.subTitle} />
         <ProjectIcons icons={project!.icons} />
-        <p class="mb-4 w-[90%] text-xs text-gray-300 md:text-sm">
+        <p
+          class="mb-4 w-[90%] text-xs leading-relaxed tracking-wide text-gray-300 md:text-sm"
+        >
           {project!.description}
         </p>
         <ProjectLinks

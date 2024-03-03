@@ -10,7 +10,7 @@ interface Props {
 const { liveLink, sourceLink } = Astro.props;
 ---
 
-<div class="mb-10 flex items-center gap-6 text-sm md:text-base">
+<div class="mb-20 flex items-center gap-6 text-sm md:text-base">
   {
     !!liveLink && (
       <a href={liveLink}>
@@ -26,7 +26,7 @@ const { liveLink, sourceLink } = Astro.props;
   }
   {
     !!sourceLink && (
-      <a href="">
+      <a href={sourceLink}>
         <button
           role="link"
           class="flex items-center gap-2 rounded-md bg-zinc-800 px-4 py-2  tracking-wide text-gray-400 transition-all hover:-translate-y-1 hover:bg-zinc-700 hover:text-white"

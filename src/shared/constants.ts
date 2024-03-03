@@ -106,4 +106,29 @@ export const ICONS = {
     src: "https://cdn.simpleicons.org/openai",
     alt: "OpenAi",
   },
+  MantineUI: {
+    href: "https://mantine.dev/",
+    src: "https://cdn.simpleicons.org/mantine",
+    alt: "MantineUI",
+  },
+  Go: {
+    href: "https://go.dev/",
+    src: "https://cdn.simpleicons.org/go",
+    alt: "Go",
+  },
+  PayloadCMS: {
+    href: "https://payloadcms.com/",
+    src: "https://cdn.simpleicons.org/payloadcms/white",
+    alt: "PayloadCMS",
+  },
+  Strapi: {
+    href: "https://strapi.io/",
+    src: "https://cdn.simpleicons.org/strapi/",
+    alt: "Strapi",
+  },
+  MaterialUI: {
+    href: "https://mui.com/",
+    src: "https://cdn.simpleicons.org/mui",
+    alt: "MaterialUI",
+  },
 } as const;
