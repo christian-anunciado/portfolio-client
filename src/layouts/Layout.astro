@@ -1,6 +1,7 @@
 ---
 import "@fontsource/geist-sans";
 import { ViewTransitions } from "astro:transitions";
+import OgImage from "../assets/images/og_image.png";
 import LeftNavbar from "../components/nav/LeftNavbar.astro";
 import MobileNav from "../components/nav/MobileNav.astro";
 import CurrentTimeHeader from "../components/tsx/current-time-header";
@@ -18,7 +19,32 @@ import CurrentTimeHeader from "../components/tsx/current-time-header";
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
+    <!-- HTML Meta Tags -->
     <title>Christian Anunciado | Web Developer</title>
+    <meta
+      name="description"
+      content="I build well-crafted websites that look good and work well."
+    />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Christian Anunciado | Web Developer" />
+    <meta
+      property="og:description"
+      content="I build well-crafted websites that look good and work well."
+    />
+    <meta property="og:image" content={OgImage.src} />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Christian Anunciado | Web Developer" />
+    <meta
+      name="twitter:description"
+      content="I build well-crafted websites that look good and work well."
+    />
+    <meta name="twitter:image" content={OgImage.src} />
+
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
     <ViewTransitions />
   </head>
   <body
