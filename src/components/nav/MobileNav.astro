@@ -1,4 +1,5 @@
 ---
+import MobileToggleThemeButton from "../tsx/MobileToggleThemeButton";
 import Hamburger from "./hamburger";
 ---
 
@@ -8,5 +9,8 @@ import Hamburger from "./hamburger";
   <a href="/">
     <h1 class="text-lg font-bold">Christian.dev</h1>
   </a>
-  <Hamburger client:load />
+  <div class="flex items-center gap-4">
+    <MobileToggleThemeButton client:load />
+    <Hamburger client:load />
+  </div>
 </nav>
