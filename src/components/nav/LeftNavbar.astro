@@ -5,14 +5,20 @@ import BottomNav from "./BottomNav.astro";
 ---
 
 <nav
-  class="sticky left-0 top-0 hidden max-w-md flex-col bg-zinc-950 px-24 py-14 md:flex"
+  class="sticky left-0 top-0 hidden max-w-md flex-col bg-white px-24 py-14 md:flex dark:bg-zinc-950"
   transition:persist
 >
   <div class="flex flex-col items-center">
     <Avatar transition:persist />
     <a href="/" class="flex flex-col items-center">
-      <h1 class="text-2xl font-bold tracking-wide">Christian.dev</h1>
-      <p class="text-sm font-light text-slate-300">Web Developer</p>
+      <h1
+        class="text-2xl font-bold tracking-wide text-slate-800 dark:text-white"
+      >
+        Christian.dev
+      </h1>
+      <p class="text-sm font-light text-slate-600 dark:text-slate-300">
+        Web Developer
+      </p>
     </a>
   </div>
   <NavLinks />

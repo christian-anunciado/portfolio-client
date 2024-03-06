@@ -13,7 +13,7 @@ import { CardHoverEffectDemo } from "./Cards.tsx";
       I'm Christian Anunciado <WavingHand class="ml-1 inline-flex" />
     </HeaderText>
     <p
-      class="max-w-3xl text-sm tracking-wide text-gray-400 md:text-base"
+      class="max-w-3xl text-sm tracking-wide text-gray-600 md:text-base dark:text-gray-400"
       transition:name="descriptionText"
     >
       I build well-crafted websites that look good and work well. With years of
@@ -21,8 +21,9 @@ import { CardHoverEffectDemo } from "./Cards.tsx";
     </p>
     <a href="/projects#projects">
       <button
-        class="w-fit rounded-md bg-sky-800 px-5 py-2.5 text-sm text-gray-200 transition-all hover:-translate-y-1 hover:bg-sky-700 hover:text-white md:text-base"
+        class="w-fit rounded-md bg-sky-700 px-5 py-2.5 text-sm text-gray-50 transition-all hover:-translate-y-1 hover:bg-sky-600 hover:text-white md:text-base dark:bg-sky-800 dark:text-gray-200 dark:hover:bg-sky-700"
         role="link"
+        transition:name="project-header"
       >
         See my Work
       </button>

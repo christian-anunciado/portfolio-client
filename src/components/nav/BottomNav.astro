@@ -1,13 +1,15 @@
 ---
-import { CONTACT_LINKS } from "../../shared/constants";
-import Gmail from "../../assets/icons/Gmail.astro";
 import Github from "../../assets/icons/Github.astro";
+import Gmail from "../../assets/icons/Gmail.astro";
 import Linkedin from "../../assets/icons/Linkedin.astro";
 import PointDown from "../../assets/icons/PointDown.astro";
+import { CONTACT_LINKS } from "../../shared/constants";
 import ContactItem from "./ContactItem.astro";
 ---
 
-<div class="mt-auto flex w-full flex-col items-start justify-center">
+<div
+  class="mt-auto flex w-full flex-col items-start justify-center text-gray-600 dark:text-gray-300"
+>
   <span class="text-base font-semibold underline underline-offset-4">
     Contact Me
     <PointDown class="ml-1 inline-flex h-6 w-6" />

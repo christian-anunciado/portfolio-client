@@ -1,7 +1,7 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
-import { cn } from '../../shared/cn';
+import { cn } from "../../shared/cn";
 
 export type HoverCardItem = {
   title: string;
@@ -35,7 +35,7 @@ export const HoverEffect = ({
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 block h-full w-full rounded-3xl bg-neutral-200  dark:bg-slate-800/[0.8]"
+                className="absolute inset-0 block h-full w-full rounded-3xl bg-sky-400  dark:bg-sky-800"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -76,7 +76,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "relative z-20 h-full w-full overflow-hidden rounded-2xl border border-transparent bg-zinc-950 p-4 group-hover:border-slate-700 dark:border-white/[0.2]",
+        "relative z-20 h-full w-full overflow-hidden rounded-2xl border border-transparent bg-zinc-900 p-4 group-hover:border-slate-700 dark:border-white/[0.2] dark:bg-zinc-950",
         className,
       )}
     >

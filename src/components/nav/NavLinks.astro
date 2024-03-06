@@ -3,12 +3,13 @@ import Coffee from "../../assets/icons/Coffee.astro";
 import Laptop from "../../assets/icons/Laptop.astro";
 import Person from "../../assets/icons/Person.astro";
 import { NAV_LINKS } from "../../shared/constants";
+import ToggleThemeButton from "../tsx/ToggleThemeButton";
 ---
 
 <ul class="mt-20 flex w-full flex-col items-start justify-center gap-10">
   {
     NAV_LINKS.map((link, index) => (
-      <li class="flex items-center gap-5 text-gray-300 transition-all hover:scale-105 hover:font-medium hover:text-white">
+      <li class="flex items-center gap-5 text-gray-600 transition-all hover:scale-105 hover:font-medium hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">
         {index === 0 && <Coffee class="h-6 w-6" />}
         {index === 1 && <Person class="h-6 w-6" />}
         {index === 2 && <Laptop class="h-6 w-6" />}
@@ -16,4 +17,7 @@ import { NAV_LINKS } from "../../shared/constants";
       </li>
     ))
   }
+  <li>
+    <ToggleThemeButton client:load />
+  </li>
 </ul>

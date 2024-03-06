@@ -16,7 +16,7 @@ const { liveLink, sourceLink } = Astro.props;
       <a href={liveLink}>
         <button
           role="link"
-          class="flex items-center gap-2 rounded-md bg-zinc-800 px-4 py-2  tracking-wide text-gray-400 transition-all hover:-translate-y-1 hover:bg-zinc-700 hover:text-white"
+          class="flex items-center gap-2 rounded-md bg-zinc-700 px-4 py-2 tracking-wide text-gray-300/80  transition-all hover:-translate-y-1 hover:bg-zinc-600 hover:text-white dark:bg-zinc-800 dark:text-gray-400 dark:hover:bg-zinc-700"
         >
           <ExternalLink class="h-5 w-5" />
           Live
@@ -29,7 +29,7 @@ const { liveLink, sourceLink } = Astro.props;
       <a href={sourceLink}>
         <button
           role="link"
-          class="flex items-center gap-2 rounded-md bg-zinc-800 px-4 py-2  tracking-wide text-gray-400 transition-all hover:-translate-y-1 hover:bg-zinc-700 hover:text-white"
+          class="flex items-center gap-2 rounded-md bg-zinc-700 px-4 py-2 tracking-wide text-gray-300/80  transition-all hover:-translate-y-1 hover:bg-zinc-600 hover:text-white dark:bg-zinc-800 dark:text-gray-400 dark:hover:bg-zinc-700"
         >
           <Github class="h-5 w-5" />
           Source
