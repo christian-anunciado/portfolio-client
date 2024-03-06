@@ -5,7 +5,7 @@ import { LineMdSunnyOutlineLoop } from "../../assets/icons/tsx/Sunny";
 type Props = {};
 
 function ToggleThemeButton({}: Props) {
-  const [theme, setTheme] = useState<"light" | "dark" | "system">("light");
+  const [theme, setTheme] = useState<"light" | "dark" | "system">("dark");
 
   useEffect(() => {
     const isDarkMode = document.documentElement.classList.contains("dark");
