@@ -8,20 +8,20 @@ function ToggleThemeButton({}: Props) {
   const [theme, setTheme] = useState<"light" | "dark" | "system">("dark");
 
   useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains("dark");
+    const isDarkMode = localStorage.getItem("theme") === "dark";
     setTheme(isDarkMode ? "dark" : "light");
   }, []);
 
-  useEffect(() => {
-    const isDark =
-      theme === "dark" ||
-      (theme === "system" &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches);
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
-  }, [theme]);
-
   const handleClicked = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    if (theme === "dark") {
+      localStorage.setItem("theme", "light");
+      document.documentElement.classList.remove("dark");
+      setTheme("light");
+    } else {
+      localStorage.setItem("theme", "dark");
+      document.documentElement.classList.add("dark");
+      setTheme("dark");
+    }
   };
   return (
     <button

@@ -11,6 +11,25 @@ import CurrentTimeHeader from "../components/tsx/current-time-header";
 <!doctype html>
 <html lang="en">
   <head>
+    <script is:inline>
+      const parent = document.documentElement;
+
+      if (!localStorage.theme) localStorage.theme = "dark";
+      console.log(
+        "🚀 ~ file: Layout.astro:18 ~ localStorage:",
+        localStorage.theme,
+      );
+
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        if (!parent.classList.contains("dark")) parent.classList.add("dark");
+      } else {
+        if (parent.classList.contains("dark")) parent.classList.remove("dark");
+      }
+    </script>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
@@ -39,77 +58,32 @@ import CurrentTimeHeader from "../components/tsx/current-time-header";
     <ViewTransitions />
 
     <script is:inline>
-      const getThemePreference = () => {
-        if (
-          typeof localStorage !== "undefined" &&
-          localStorage.getItem("theme")
-        ) {
-          return localStorage.getItem("theme");
-        }
-        return window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light";
-      };
-      const isDark = getThemePreference() === "dark";
-      document.documentElement.classList[isDark ? "add" : "remove"]("dark");
-
-      if (typeof localStorage !== "undefined") {
-        const observer = new MutationObserver(() => {
-          const isDark = document.documentElement.classList.contains("dark");
-          localStorage.setItem("theme", isDark ? "dark" : "light");
-        });
-        observer.observe(document.documentElement, {
-          attributes: true,
-          attributeFilter: ["class"],
-        });
-      }
-
       document.addEventListener("astro:after-swap", function () {
-        if (localStorage.getItem("theme") === "dark")
-          document.documentElement.classList.toggle("dark", true);
+        const theme = localStorage.getItem("theme");
+        if (theme === "dark") document.documentElement.classList.add("dark");
+        else document.documentElement.classList.remove("dark");
       });
     </script>
 
-    <script is:inline>
-      // Necessary for view transitions
-      document.addEventListener("astro:after-swap", () => {
-        if (
-          localStorage.theme === "dark" ||
-          (!("theme" in localStorage) &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches)
-        ) {
-          document.documentElement.classList.add("dark");
-        }
-      });
-
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
+    <style is:global>
+      *,
+      body {
+        transition: all 0.3s ease-out;
+        transition-property: background-color, color;
       }
-    </script>
-  </head>
-  <style is:global>
-    *,
-    body {
-      transition: all 0.3s ease-out;
-      transition-property: background-color, color;
-    }
-    .icon {
-      transition: none !important;
-      -moz-transition: none !important;
-      -webkit-transition: none !important;
-      -o-transition: none !important;
-    }
-  </style>
+      .icon {
+        transition: none !important;
+        -moz-transition: none !important;
+        -webkit-transition: none !important;
+        -o-transition: none !important;
+      }
+    </style></head
+  >
+
   <body
     class="flex h-screen flex-col bg-gradient-to-b from-zinc-50 to-zinc-300 text-slate-200 md:flex-row dark:bg-gradient-to-b dark:from-zinc-800 dark:to-zinc-900"
   >
-    <LeftNavbar transition:persist />
+    <LeftNavbar />
     <main
       class="relative h-[100svh] w-full overflow-y-auto bg-dot-black/15 dark:bg-dot-black/[0.8]"
     >
