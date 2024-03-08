@@ -11,25 +11,6 @@ import CurrentTimeHeader from "../components/tsx/current-time-header";
 <!doctype html>
 <html lang="en">
   <head>
-    <script is:inline>
-      const parent = document.documentElement;
-
-      if (!localStorage.theme) localStorage.theme = "dark";
-      console.log(
-        "🚀 ~ file: Layout.astro:18 ~ localStorage:",
-        localStorage.theme,
-      );
-
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        if (!parent.classList.contains("dark")) parent.classList.add("dark");
-      } else {
-        if (parent.classList.contains("dark")) parent.classList.remove("dark");
-      }
-    </script>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
@@ -58,10 +39,36 @@ import CurrentTimeHeader from "../components/tsx/current-time-header";
     <ViewTransitions />
 
     <script is:inline>
-      document.addEventListener("astro:after-swap", function () {
-        const theme = localStorage.getItem("theme");
-        if (theme === "dark") document.documentElement.classList.add("dark");
-        else document.documentElement.classList.remove("dark");
+      function setDarkMode(document) {
+        const parent = document.documentElement;
+
+        console.log(
+          "🚀 ~ file: Layout.astro:18 ~ localStorage:",
+          localStorage.theme,
+        );
+
+        if (localStorage.theme === undefined) {
+          let theme = window.matchMedia("(prefers-color-scheme: dark)")
+            ? "dark"
+            : "light";
+
+          localStorage.setItem("theme", theme);
+        }
+
+        if (localStorage.theme === "dark") {
+          parent.classList.add("dark");
+        }
+
+        if (localStorage.theme === "light") {
+          parent.classList.remove("dark");
+        }
+      }
+
+      setDarkMode(document);
+
+      document.addEventListener("astro:before-swap", (ev) => {
+        // Pass the incoming document to set the theme on it
+        setDarkMode(ev.newDocument);
       });
     </script>
 
