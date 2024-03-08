@@ -41,12 +41,6 @@ import CurrentTimeHeader from "../components/tsx/current-time-header";
     <script is:inline>
       function setDarkMode(document) {
         const parent = document.documentElement;
-
-        console.log(
-          "🚀 ~ file: Layout.astro:18 ~ localStorage:",
-          localStorage.theme,
-        );
-
         if (localStorage.theme === undefined) {
           let theme = window.matchMedia("(prefers-color-scheme: dark)")
             ? "dark"
@@ -90,7 +84,7 @@ import CurrentTimeHeader from "../components/tsx/current-time-header";
   <body
     class="flex h-screen flex-col bg-gradient-to-b from-zinc-50 to-zinc-300 text-slate-200 md:flex-row dark:bg-gradient-to-b dark:from-zinc-800 dark:to-zinc-900"
   >
-    <LeftNavbar />
+    <LeftNavbar transition:persist />
     <main
       class="relative h-[100svh] w-full overflow-y-auto bg-dot-black/15 dark:bg-dot-black/[0.8]"
     >

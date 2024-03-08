@@ -6,7 +6,10 @@ import { NAV_LINKS } from "../../shared/constants";
 import ToggleThemeButton from "../tsx/ToggleThemeButton";
 ---
 
-<ul class="mt-20 flex w-full flex-col items-start justify-center gap-10">
+<ul
+  class="mt-20 flex w-full flex-col items-start justify-center gap-10"
+  transition:persist
+>
   {
     NAV_LINKS.map((link, index) => (
       <li class="flex items-center gap-5 text-gray-600 transition-all hover:scale-105 hover:font-medium hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">
@@ -18,6 +21,6 @@ import ToggleThemeButton from "../tsx/ToggleThemeButton";
     ))
   }
   <li>
-    <ToggleThemeButton client:load />
+    <ToggleThemeButton transition:persist client:idle />
   </li>
 </ul>

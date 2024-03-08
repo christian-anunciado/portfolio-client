@@ -1,7 +1,7 @@
 ---
 import type { GetStaticPaths } from "astro";
+import BackArrow from "../../components/BackArrow.astro";
 import MainContainer from "../../components/MainContainer.astro";
-import BackArrow from "../../components/tsx/back-arrow";
 import { DirectionAwareHover } from "../../components/tsx/direction-aware-hover";
 import ProjectHeader from "../../features/projects/project/ProjectHeader.astro";
 import ProjectIcons from "../../features/projects/project/ProjectIcons.astro";
@@ -31,7 +31,7 @@ const project = projects.find(
 <Layout>
   <MainContainer className="md:items-start">
     <div class="flex flex-col gap-10">
-      <BackArrow id={"projects"} client:load />
+      <BackArrow id={"projects"} />
       <DirectionAwareHover
         imageUrl={project!.projectImg}
         className="h-auto md:h-96"
