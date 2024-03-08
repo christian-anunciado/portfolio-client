@@ -4,6 +4,7 @@ import HeaderText from "../../components/HeaderText.astro";
 import MainContainer from "../../components/MainContainer.astro";
 import TitleText from "../../components/TitleText.astro";
 import { CardHoverEffectDemo } from "./Cards.tsx";
+import Links from "./Links.astro";
 ---
 
 <MainContainer>
@@ -19,15 +20,7 @@ import { CardHoverEffectDemo } from "./Cards.tsx";
       I build well-crafted websites that look good and work well. With years of
       experience, I can help you make your ideas come to life.
     </p>
-    <a href="/projects#projects" class="w-fit">
-      <button
-        class="w-fit rounded-md bg-sky-700 px-5 py-2.5 text-sm text-gray-50 transition-all hover:-translate-y-1 hover:bg-sky-600 hover:text-white md:text-base dark:bg-sky-800 dark:text-gray-200 dark:hover:bg-sky-700"
-        role="link"
-        transition:name="project-header"
-      >
-        See my Work
-      </button>
-    </a>
+    <Links />
     <CardHoverEffectDemo transition:name="objectTest" client:visible />
   </div>
 </MainContainer>
