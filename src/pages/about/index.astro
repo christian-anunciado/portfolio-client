@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import programmer from "../../assets/images/programmer.png";
+import Avatar from "../../components/Avatar.astro";
 import HeaderText from "../../components/HeaderText.astro";
 import MainContainer from "../../components/MainContainer.astro";
 import TitleText from "../../components/TitleText.astro";
@@ -11,6 +12,9 @@ import Layout from "../../layouts/Layout.astro";
 <Layout>
   <MainContainer>
     <div class="flex w-fit flex-col gap-5 pb-10 md:pb-0">
+      <div class="flex w-full items-center justify-center md:hidden">
+        <Avatar class="block md:hidden" />
+      </div>
       <TitleText> About Me </TitleText>
       <HeaderText className="flex items-center gap-5">
         I'm a Web Developer <Image
