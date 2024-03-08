@@ -26,7 +26,7 @@ export const projects = [
   },
 
   {
-    title: "1+",
+    title: "2+",
     description: "Developer Experience",
   },
   {
