@@ -83,7 +83,7 @@ export const ICONS = {
   },
   ShadCN: {
     href: "https://ui.shadcn.com/",
-    src: "https://cdn.simpleicons.org/shadcnui/white",
+    src: "https://cdn.simpleicons.org/shadcnui/black/white",
     alt: "Shadcn UI",
   },
   NodeJS: {

@@ -36,28 +36,6 @@ import CurrentTimeHeader from "../components/tsx/current-time-header";
       }}
     />
 
-    <script is:inline>
-      // Necessary for view transitions
-      document.addEventListener("astro:after-swap", () => {
-        if (
-          localStorage.theme === "dark" ||
-          (!("theme" in localStorage) &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches)
-        ) {
-          document.documentElement.classList.add("dark");
-        }
-      });
-
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    </script>
     <ViewTransitions />
 
     <script is:inline>
@@ -91,9 +69,45 @@ import CurrentTimeHeader from "../components/tsx/current-time-header";
           document.documentElement.classList.toggle("dark", true);
       });
     </script>
+
+    <script is:inline>
+      // Necessary for view transitions
+      document.addEventListener("astro:after-swap", () => {
+        if (
+          localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        }
+      });
+
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
+  <style is:global>
+    *,
+    body {
+      transition: all 0.3s ease-out;
+      transition-property: background-color, color;
+    }
+    .icon {
+      transition: none !important;
+      -moz-transition: none !important;
+      -webkit-transition: none !important;
+      -o-transition: none !important;
+    }
+  </style>
   <body
-    class="flex h-screen flex-col bg-gradient-to-b from-zinc-50 to-zinc-300 text-slate-200 transition-all duration-1000 md:flex-row dark:bg-gradient-to-b dark:from-zinc-800 dark:to-zinc-900"
+    class="flex h-screen flex-col bg-gradient-to-b from-zinc-50 to-zinc-300 text-slate-200 md:flex-row dark:bg-gradient-to-b dark:from-zinc-800 dark:to-zinc-900"
   >
     <LeftNavbar transition:persist />
     <main
@@ -104,11 +118,5 @@ import CurrentTimeHeader from "../components/tsx/current-time-header";
 
       <slot />
     </main>
-    <style is:global>
-      * {
-        transition: all 0.35s ease-out;
-        transition-property: background-color, color;
-      }
-    </style>
   </body>
 </html>
