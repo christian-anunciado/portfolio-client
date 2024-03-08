@@ -78,7 +78,7 @@ export const ICONS = {
   },
   ChakraUI: {
     href: "https://chakra-ui.com/",
-    src: "https://cdn.simpleicons.org/chakra",
+    src: "https://cdn.simpleicons.org/chakraui",
     alt: "ChakraUI",
   },
   ShadCN: {
