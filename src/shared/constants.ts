@@ -58,12 +58,15 @@ export const ICONS = {
   },
   React: {
     href: "https://reactjs.org/",
-    src: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg",
+    src: "https://cdn.simpleicons.org/react",
+    darkSrc: "https://cdn.simpleicons.org/react/087ea4",
     alt: "React",
   },
   NextJs: {
     href: "https://nextjs.org/",
     src: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nextjs-colored-dark.svg",
+    darkSrc:
+      "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nextjs-colored.svg",
     alt: "NextJs",
   },
   Astro: {
@@ -84,6 +87,7 @@ export const ICONS = {
   ShadCN: {
     href: "https://ui.shadcn.com/",
     src: "https://cdn.simpleicons.org/shadcnui/black/white",
+    darkSrc: "https://cdn.simpleicons.org/shadcnui/white/black",
     alt: "Shadcn UI",
   },
   NodeJS: {

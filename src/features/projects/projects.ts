@@ -12,6 +12,7 @@ export type Icon = {
   href: string;
   src: string;
   alt: string;
+  darkSrc?: string;
 };
 
 export type Project = {

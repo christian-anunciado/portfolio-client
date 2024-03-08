@@ -18,9 +18,10 @@ const { icons } = Astro.props;
           src: icon.src,
           name: icon.alt,
           id: idx,
+          darkSrc: icon.darkSrc,
         }}
         imgClassName="h-6 w-6"
-        client:load
+        client:visible
       />
     ))
   }

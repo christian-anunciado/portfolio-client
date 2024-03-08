@@ -15,6 +15,7 @@ function Technology({}: Props) {
               href: tech.href,
               src: tech.src,
               name: tech.alt,
+              darkSrc: tech.darkSrc,
               id: idx,
             }}
           />

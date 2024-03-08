@@ -22,6 +22,7 @@ function ToggleThemeButton({}: Props) {
       document.documentElement.classList.add("dark");
       setTheme("dark");
     }
+    window.dispatchEvent(new Event("storage"));
   };
   return (
     <button onClick={handleClicked}>
