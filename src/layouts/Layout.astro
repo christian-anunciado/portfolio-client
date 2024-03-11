@@ -6,6 +6,8 @@ import OgImage from "../../public/og_image.jpg";
 import LeftNavbar from "../components/nav/LeftNavbar.astro";
 import MobileNav from "../components/nav/MobileNav.astro";
 import CurrentTimeHeader from "../components/tsx/current-time-header";
+
+const MEASUREMENT_ID = import.meta.env.GA_MEASUREMENT_ID;
 ---
 
 <!doctype html>
@@ -35,6 +37,22 @@ import CurrentTimeHeader from "../components/tsx/current-time-header";
         },
       }}
     />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      type="text/partytown"
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${MEASUREMENT_ID}`}
+    ></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", MEASUREMENT_ID);
+    </script>
 
     <ViewTransitions />
 
@@ -82,7 +100,7 @@ import CurrentTimeHeader from "../components/tsx/current-time-header";
   >
 
   <body
-    class="flex h-screen flex-col bg-gradient-to-b from-zinc-50 to-zinc-300 text-slate-200 md:flex-row dark:bg-gradient-to-b dark:from-zinc-800 dark:to-zinc-900"
+    class="flex h-screen flex-col bg-gradient-to-b from-zinc-50 to-zinc-300 text-slate-200 dark:bg-gradient-to-b dark:from-zinc-800 dark:to-zinc-900 md:flex-row"
   >
     <LeftNavbar transition:persist />
     <main
